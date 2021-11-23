@@ -156,6 +156,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/assets/css/dashforge.auth.css":
+/*!*************************************************!*\
+  !*** ./resources/assets/css/dashforge.auth.css ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/assets/css/dashforge.landing.css":
 /*!****************************************************!*\
   !*** ./resources/assets/css/dashforge.landing.css ***!
@@ -258,6 +271,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			"/assets/js/dashforge": 0,
 /******/ 			"assets/css/dashforge": 0,
 /******/ 			"assets/css/dashforge.landing": 0,
+/******/ 			"assets/css/dashforge.auth": 0,
 /******/ 			"assets/lib/ionicons/css/ionicons.min": 0,
 /******/ 			"assets/lib/@fortawesome/fontawesome-free/css/all.min": 0
 /******/ 		};
@@ -309,11 +323,12 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/js/dashforge.js")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/lib/@fortawesome/fontawesome-free/css/all.min.css")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/lib/ionicons/css/ionicons.min.css")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/css/dashforge.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/css/dashforge.landing.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/js/dashforge.js")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/lib/@fortawesome/fontawesome-free/css/all.min.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/lib/ionicons/css/ionicons.min.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/css/dashforge.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/css/dashforge.auth.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/css/dashforge.landing.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
