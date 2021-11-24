@@ -37,3 +37,17 @@ Route::get('/forgot-password', function () {
 
     return view('frontend.forgot-password');
 });
+
+
+
+
+Route::get('/dashboard', function () {
+
+    return view('backend.dashboard');
+});
+
+
+Route::get('/profile', function () {
+
+    return view('backend.profile');
+});
