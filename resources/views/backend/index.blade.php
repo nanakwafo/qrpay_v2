@@ -9,7 +9,7 @@
   <body>
     <script>
     // similar behavior as an HTTP redirect
-    window.location.replace("dashboard-one.html");
+    window.location.replace("dashboard");
     </script>
   </body>
 </html>

@@ -117,6 +117,45 @@ $(function () {
 
 /***/ }),
 
+/***/ "./resources/assets/css/dashforge.auth.css":
+/*!*************************************************!*\
+  !*** ./resources/assets/css/dashforge.auth.css ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/assets/css/dashforge.landing.css":
+/*!****************************************************!*\
+  !*** ./resources/assets/css/dashforge.landing.css ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/assets/css/dashforge.dashboard.css":
+/*!******************************************************!*\
+  !*** ./resources/assets/css/dashforge.dashboard.css ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/assets/lib/@fortawesome/fontawesome-free/css/all.min.css":
 /*!****************************************************************************!*\
   !*** ./resources/assets/lib/@fortawesome/fontawesome-free/css/all.min.css ***!
@@ -143,6 +182,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/assets/lib/jqvmap/jqvmap.min.css":
+/*!****************************************************!*\
+  !*** ./resources/assets/lib/jqvmap/jqvmap.min.css ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/assets/css/dashforge.css":
 /*!********************************************!*\
   !*** ./resources/assets/css/dashforge.css ***!
@@ -156,22 +208,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/css/dashforge.auth.css":
-/*!*************************************************!*\
-  !*** ./resources/assets/css/dashforge.auth.css ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/assets/css/dashforge.landing.css":
+/***/ "./resources/assets/css/dashforge.profile.css":
 /*!****************************************************!*\
-  !*** ./resources/assets/css/dashforge.landing.css ***!
+  !*** ./resources/assets/css/dashforge.profile.css ***!
   \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -270,10 +309,13 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		var installedChunks = {
 /******/ 			"/assets/js/dashforge": 0,
 /******/ 			"assets/css/dashforge": 0,
-/******/ 			"assets/css/dashforge.landing": 0,
-/******/ 			"assets/css/dashforge.auth": 0,
+/******/ 			"assets/css/dashforge.profile": 0,
+/******/ 			"assets/lib/jqvmap/jqvmap.min": 0,
 /******/ 			"assets/lib/ionicons/css/ionicons.min": 0,
-/******/ 			"assets/lib/@fortawesome/fontawesome-free/css/all.min": 0
+/******/ 			"assets/lib/@fortawesome/fontawesome-free/css/all.min": 0,
+/******/ 			"assets/css/dashforge.dashboard": 0,
+/******/ 			"assets/css/dashforge.landing": 0,
+/******/ 			"assets/css/dashforge.auth": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -323,12 +365,15 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/js/dashforge.js")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/lib/@fortawesome/fontawesome-free/css/all.min.css")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/lib/ionicons/css/ionicons.min.css")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/css/dashforge.css")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/css/dashforge.auth.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.landing","assets/css/dashforge.auth","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min"], () => (__webpack_require__("./resources/assets/css/dashforge.landing.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.profile","assets/lib/jqvmap/jqvmap.min","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min","assets/css/dashforge.dashboard","assets/css/dashforge.landing","assets/css/dashforge.auth"], () => (__webpack_require__("./resources/assets/js/dashforge.js")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.profile","assets/lib/jqvmap/jqvmap.min","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min","assets/css/dashforge.dashboard","assets/css/dashforge.landing","assets/css/dashforge.auth"], () => (__webpack_require__("./resources/assets/lib/@fortawesome/fontawesome-free/css/all.min.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.profile","assets/lib/jqvmap/jqvmap.min","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min","assets/css/dashforge.dashboard","assets/css/dashforge.landing","assets/css/dashforge.auth"], () => (__webpack_require__("./resources/assets/lib/ionicons/css/ionicons.min.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.profile","assets/lib/jqvmap/jqvmap.min","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min","assets/css/dashforge.dashboard","assets/css/dashforge.landing","assets/css/dashforge.auth"], () => (__webpack_require__("./resources/assets/lib/jqvmap/jqvmap.min.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.profile","assets/lib/jqvmap/jqvmap.min","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min","assets/css/dashforge.dashboard","assets/css/dashforge.landing","assets/css/dashforge.auth"], () => (__webpack_require__("./resources/assets/css/dashforge.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.profile","assets/lib/jqvmap/jqvmap.min","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min","assets/css/dashforge.dashboard","assets/css/dashforge.landing","assets/css/dashforge.auth"], () => (__webpack_require__("./resources/assets/css/dashforge.profile.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.profile","assets/lib/jqvmap/jqvmap.min","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min","assets/css/dashforge.dashboard","assets/css/dashforge.landing","assets/css/dashforge.auth"], () => (__webpack_require__("./resources/assets/css/dashforge.auth.css")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.profile","assets/lib/jqvmap/jqvmap.min","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min","assets/css/dashforge.dashboard","assets/css/dashforge.landing","assets/css/dashforge.auth"], () => (__webpack_require__("./resources/assets/css/dashforge.landing.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/dashforge","assets/css/dashforge.profile","assets/lib/jqvmap/jqvmap.min","assets/lib/ionicons/css/ionicons.min","assets/lib/@fortawesome/fontawesome-free/css/all.min","assets/css/dashforge.dashboard","assets/css/dashforge.landing","assets/css/dashforge.auth"], () => (__webpack_require__("./resources/assets/css/dashforge.dashboard.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

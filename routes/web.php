@@ -51,3 +51,9 @@ Route::get('/profile', function () {
 
     return view('backend.profile');
 });
+
+
+Route::get('/qrcodes', function () {
+
+    return view('backend.qrcodes');
+});
