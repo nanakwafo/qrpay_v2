@@ -3,6 +3,37 @@
 return [
 
     /*
+     |--------------------------------------------------------------------------
+     | Stripe Secret Key
+     |--------------------------------------------------------------------------
+     |
+     | This value is the name of your application. This value is used when the
+     | framework needs to place the application's name in a notification or
+     | any other location as required by the application or its packages.
+     |
+     */
+    'secret_key'=>env('SECRET_KEY_STAGING'),
+    //'secret_key'=>env('SECRET_KEY_PRODUCTION'),
+    /*
+     |--------------------------------------------------------------------------
+     | Stripe Publishable Key
+     |--------------------------------------------------------------------------
+     |
+     | This value is the name of your application. This value is used when the
+     | framework needs to place the application's name in a notification or
+     | any other location as required by the application or its packages.
+     |
+     */
+    'publishable_key'=>env('PUBLISHABLE_KEY_STAGING'),
+    //'publishable_key'=>env('PUBLISHABLE_KEY_PRODUCTION'),
+
+
+    // 'refresh_url'=>env('STAGING_REFRESH_URL'),
+    'refresh_url' =>env('LIVE_REFRESH_URL'),
+    //'return_url' =>env('STAGING_RETURN_URL'),
+    'return_url' =>env('LIVE_RETURN_URL'),
+
+    /*
     |--------------------------------------------------------------------------
     | Application Name
     |--------------------------------------------------------------------------
