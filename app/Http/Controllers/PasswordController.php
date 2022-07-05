@@ -8,6 +8,7 @@ use App\Models\Account;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Mail;
 use Mail;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Session;
@@ -70,7 +71,7 @@ class PasswordController extends Controller
         /*************register user**************/
 
         /*************Send Acytivation MAil**********/
-        //$this->sendActivationMail($request->email,$activation->code);
+        $this->sendActivationMail($request->email,$activation->code);
 
         return redirect()->back()->with(['success'=>'An activation link was sent to your email Address']);
        // return redirect()->back()->with(['success'=>'Please contact me on nanamensah1150@gmail.com if its in your interest to use qrcodepay in the future.']);
