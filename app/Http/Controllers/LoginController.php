@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Account;
+use App\Models\Account;
 use App\Http\Requests\LoginRequest;
 use Cartalyst\Sentinel\Checkpoints\NotActivatedException;
 use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
@@ -24,16 +24,14 @@ class LoginController extends Controller
      */
     public function index(){
 
-        return view('userpanel.login');
+
+        return view('frontend.signin');
     }
 
     ////////////////////////////////////////////////////////////////
     ///////////////// user tries to login///////////////////////////
     /// ///////////////////////////////////////////////////////////
-    /**
-     * @param LoginRequest $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
+
     public function handleAccountLogin(LoginRequest $request){
         /***********validate request from login form**********/
         $validated = $request->validated();

@@ -61,7 +61,9 @@
                 <div class="wd-100p">
                     <h3 class="tx-color-01 mg-b-5">Sign In</h3>
                     <p class="tx-color-03 tx-16 mg-b-40">Welcome back! Please signin to continue.</p>
-
+                    <form action="{{route('loginaccount')}}" method="post">
+                    @include('partials.messages.alert')
+                        @csrf
                     <div class="form-group">
                         <label>Email address</label>
                         <input type="email" class="form-control" placeholder="yourname@yourmail.com">
@@ -74,6 +76,7 @@
                         <input type="password" class="form-control" placeholder="Enter your password">
                     </div>
                     <button class="btn btn-brand-02 btn-block">Sign In</button>
+                    </form>
                     <div class="divider-text">or</div>
                     <button class="btn btn-outline-facebook btn-block">Sign In With Facebook</button>
                     <button class="btn btn-outline-twitter btn-block">Sign In With Twitter</button>

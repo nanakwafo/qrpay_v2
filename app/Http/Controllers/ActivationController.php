@@ -2,23 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Activation;
-use App\User;
-use Sentinel;
+//use Activation;
+use App\Models\User;
+use Cartalyst\Sentinel\Laravel\Facades\Activation;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
+
+//use Sentinel;
 
 
 class ActivationController extends Controller
 {
     //
-    public function activate($email, $activationCode){
-        $user = User::whereEmail($email)->first();
+    public function activate($email, $activationCode)
+    {
+        try {
+//            $credentials = [
+//                'login' => $email,
+//            ];
+//            $user = Sentinel::findByCredentials($credentials);
+//            $activation = Activation::complete($user, $activationCode);
+//            if ($activation)
+                return redirect()->route('loginaccount');
 
-        if(Activation::complete($user,$activationCode))
-        {
-            return redirect('/loginaccount');
-
-        }else{
-
+        } catch (\Exception $exception) {
+            return $exception;
         }
+
+
     }
 }

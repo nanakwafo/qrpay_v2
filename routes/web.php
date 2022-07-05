@@ -2,6 +2,8 @@
 
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ActivationController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\WelcomeController;
@@ -43,8 +45,13 @@ Route::middleware(['visitor'])->group(function () {
     Route::get('/forgotpassword', 'ForgotPasswordController@index')->name('forgotpassword');
     Route::get('/reset/{email}/{resetCode}', 'ForgotPasswordController@resetpassword')->name('reset');
     Route::post('/reset/{email}/{resetCode}', 'ForgotPasswordController@postresetpassword')->name('reset');
-    Route::get('/activate/{email}/{activationCode}', 'ActivationController@activate')->name('activate');
-    Route::get('/loginaccount', 'LoginController@index')->name('loginaccount');
+
+    Route::get('/activate/{email}/{activationCode}', [ActivationController::class, 'activate'])->name('activate');
+
+
+
+    Route::get('/loginaccount', [LoginController::class, 'index'])->name('loginaccountx');
+    Route::post('/loginaccount', [LoginController::class, 'handleAccountLogin'])->name('loginaccount');
     Route::get('/accountveirfied', 'AccountController@accountveirfied')->name('accountveirfied');
     Route::get('/pay/{platformId?}/{qrcode_id?}', [PaymentController::class, 'createPayment'])->name('pay');
 
@@ -53,7 +60,10 @@ Route::middleware(['visitor'])->group(function () {
     Route::post('/updatepassword', [PasswordController::class, 'update'])->name('updatepassword');
     Route::get('/accountpassword/{platformId?}/{email?}', [PasswordController::class, 'index'])->name('accountpassword');
 
-    Route::post('loginaccount', 'LoginController@handleAccountLogin')->name('loginaccount');
+
+
+
+
     Route::get('/stripereturn', 'AccountController@accountReturn')->name('stripereturn');
     Route::get('/striperefresh/{email?}', 'AccountController@striperefresh')->name('striperefresh');
     Route::post('/registereduser', 'AccountController@registereduser')->name('registereduser');
