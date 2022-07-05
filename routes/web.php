@@ -1,8 +1,15 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RegisterationController;
+
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
+//use Analytics;
+//
+//use Spatie\Analytics\Period;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,178 +22,86 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-//
-//Route::get('/test',function (){
-//    \QrCode::size(500)
-//        ->format('png')
-//        ->color(255, 0, 0,25)
-//        ->generate('https://qrcodepay.nanalabs.co.uk', public_path('images/qrcode4.png'));
-//    return view('test');
-//
-//});
-//
-//
-//
-//
-//Route::get('/', [HomeController::class, 'index']);
-//
-//
-//
-//
-//
-//
-//Route::post('/logout', 'LoginController@logout')->name('logout');
-//
-//Route::middleware(['visitor'])->group(function () {
-//    Route::get('/registeraccount', 'AccountController@index')->name('registeraccount');
-//    Route::get('/success/{amount}/{companyname}', 'PaymentController@success')->name('success');
-//    Route::get('/privacy', 'PrivacyController@index')->name('privacy');
-//    Route::get('/forgotpassword', 'ForgotPasswordController@index')->name('forgotpassword');
-//    Route::get('/reset/{email}/{resetCode}', 'ForgotPasswordController@resetpassword')->name('reset');
-//    Route::post('/reset/{email}/{resetCode}', 'ForgotPasswordController@postresetpassword')->name('reset');
-//    Route::get('/activate/{email}/{activationCode}', 'ActivationController@activate')->name('activate');
-//    Route::get('/loginaccount', 'LoginController@index')->name('loginaccount');
-//    Route::get('/accountveirfied', 'AccountController@accountveirfied')->name('accountveirfied');
-//    Route::any('/pay/{platformId?}/{qrcode_id?}', 'PaymentController@createPayment')->name('pay');
-//    Route::post('/validateemail', 'PasswordController@confirmemail')->name('validateemail');
-//
-//    Route::post('/updatepassword', [RegisterationController::class, 'update'])->name('updatepassword');
-//
-//
-//
-//    Route::get('/accountpassword/{platformId?}/{email?}', 'PasswordController@index')->name('accountpassword');
-//
-//    Route::post('loginaccount', 'LoginController@handleAccountLogin')->name('loginaccount');
-//    Route::get('/stripereturn', 'AccountController@accountReturn')->name('stripereturn');
-//    Route::get('/striperefresh/{email?}', 'AccountController@striperefresh')->name('striperefresh');
-//    Route::post('/registereduser', 'AccountController@registereduser')->name('registereduser');
-//    Route::post('/paymentdone', 'WebhookController@paymentdone')->name('paymentdone');
-//    Route::post('/forgot-password', 'ForgotPasswordController@postForgotPassword')->name('forgot-password');
-//    Route::post('/sendContact', 'ContactController@sendEmail')->name('sendContact');
-//});
-//
-//
-//Route::get('/dashboard/{platformId?}', 'DashboardController@index')->name('dashboard')->middleware('vendor');
-//Route::get('/profile/{platformId?}', 'ProfileController@index')->name('profile')->middleware('vendor');
-//Route::get('/transaction/{platformId?}', 'TransactionController@index')->name('transaction')->middleware('vendor');
-//Route::any('/qrcodes/{platformId?}/{qrcodeId?}', 'QrcodeController@index')->name('qrcodes')->middleware('vendor');
-//Route::get('/qrcodeDownload/{id?}', 'QrcodeController@qrcodeDownload')->name('qrcodeDownload')->middleware('vendor');
-//Route::get('/indexqrcodes/{platformId?}', 'ReportController@indexqrcodes')->name('indexqrcodes')->middleware('vendor');
-//
-////downloads
-//Route::get('/transactions/pdf/{platformId?}/{qrCodeId?}','PdfController@export_pdf')->name('transactions-pdf')->middleware('vendor');
-//Route::get('/transactions/xlsx/{platformId?}/{qrCodeId?}','ExcelController@exportxlsx')->name('transactionsxlsx')->middleware('vendor');
-//Route::get('/transactions/csv/{platformId?}/{qrCodeId?}','ExcelController@exportcsv')->name('transactionscsv')->middleware('vendor');
-//
-//Route::post('/updatelogo', 'QrcodeController@updatelogo')->name('updatelogo')->middleware('vendor');
-//
-////Amount Setting
-//Route::post('/saveuseramount', 'AmountsettingController@save')->name('saveuseramount')->middleware('vendor');
-//Route::post('/updateamount', ['as'=>'updateamount','uses'=>'AmountsettingController@updateamount'])->middleware('vendor');
-//Route::post('/deleteamount', ['as'=>'deleteamount','uses'=>'AmountsettingController@deleteamount'])->middleware('vendor');
-//
-//
-//Route::post('/getstatistics', 'DashboardController@getstatistics')->name('getstatistics')->middleware('vendor');
-//Route::post('/transactiontotalqrcode', 'ReportController@transactiontotalqrcode')->name('transactiontotalqrcode')->middleware('vendor');
-//Route::post('/getpiechartdata', 'ReportController@piechartData')->name('getpiechartdata')->middleware('vendor');
-//
-//Route::get('/createQrcode/{platformId?}', 'QrcodeController@createQrcode')->name('createQrcode')->middleware('vendor');
-//
-//
-//Route::post('/generateQrcode', 'QrcodeController@generateQrCode')->name('generateQrcode')->middleware('vendor');
-//Route::post('/updateQrcode', 'QrcodeController@updateQrcode')->name('updateQrcode')->middleware('vendor');
-//Route::post('/deleteQrcode', 'QrcodeController@deleteQrcode')->name('deleteQrcode')->middleware('vendor');
-//Route::post('/activateQrcode', 'QrcodeController@activateQrcode')->name('activateQrcode')->middleware('vendor');
-//Route::post('/qrcodesreports', ['as'=>'qrcodesreports','uses'=>'ReportController@reports'])->middleware('vendor');
-//Route::post('/updateprofile', ['as'=>'updateprofile','uses'=>'ProfileController@updateprofile'])->middleware('vendor');
-//Route::get('/registeraccount/{email?}', 'AccountController@handleAccountCreation')->name('registeraccount')->middleware('vendor');
-//Route::post('/searchqrcode', 'QrcodeController@searchQrcode')->name('searchqrcode')->middleware('vendor');
-//
+Route::get('/test',function (){
+    \QrCode::size(500)
+        ->format('png')
+        ->color(255, 0, 0,25)
+        ->generate('https://qrcodepay.nanalabs.co.uk', public_path('images/qrcode4.png'));
+    return view('test');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Route::get('/', function () {
-//
-//    return view('frontend.welcome');
-//});
-
-Route::get('/signin', function () {
-
-    return view('frontend.signin');
 });
+Route::get('/', [WelcomeController::class, 'index']);
+Route::post('/logout', 'LoginController@logout')->name('logout');
 
-Route::get('/signup', function () {
+Route::middleware(['visitor'])->group(function () {
 
-    return view('frontend.signup');
-});
+    Route::get('/registeraccount', [AccountController::class, 'index']);
+    Route::get('/success/{amount}/{companyname}', [PaymentController::class, 'success'])->name('success');
 
-Route::get('/pricing', function () {
 
-    return view('frontend.pricing');
-});
+    Route::get('/privacy', 'PrivacyController@index')->name('privacy');
+    Route::get('/forgotpassword', 'ForgotPasswordController@index')->name('forgotpassword');
+    Route::get('/reset/{email}/{resetCode}', 'ForgotPasswordController@resetpassword')->name('reset');
+    Route::post('/reset/{email}/{resetCode}', 'ForgotPasswordController@postresetpassword')->name('reset');
+    Route::get('/activate/{email}/{activationCode}', 'ActivationController@activate')->name('activate');
+    Route::get('/loginaccount', 'LoginController@index')->name('loginaccount');
+    Route::get('/accountveirfied', 'AccountController@accountveirfied')->name('accountveirfied');
+    Route::get('/pay/{platformId?}/{qrcode_id?}', [PaymentController::class, 'createPayment'])->name('pay');
 
-Route::get('/forgot-password', function () {
 
-    return view('frontend.forgot-password');
+    Route::post('/validateemail', [PasswordController::class, 'confirmemail'])->name('validateemail');
+    Route::post('/updatepassword', [PasswordController::class, 'update'])->name('updatepassword');
+    Route::get('/accountpassword/{platformId?}/{email?}', [PasswordController::class, 'index'])->name('accountpassword');
+
+    Route::post('loginaccount', 'LoginController@handleAccountLogin')->name('loginaccount');
+    Route::get('/stripereturn', 'AccountController@accountReturn')->name('stripereturn');
+    Route::get('/striperefresh/{email?}', 'AccountController@striperefresh')->name('striperefresh');
+    Route::post('/registereduser', 'AccountController@registereduser')->name('registereduser');
+    Route::post('/paymentdone', 'WebhookController@paymentdone')->name('paymentdone');
+    Route::post('/forgot-password', 'ForgotPasswordController@postForgotPassword')->name('forgot-password');
+    Route::post('/sendContact', 'ContactController@sendEmail')->name('sendContact');
 });
 
 
+Route::get('/dashboard/{platformId?}', 'DashboardController@index')->name('dashboard')->middleware('vendor');
+Route::get('/profile/{platformId?}', 'ProfileController@index')->name('profile')->middleware('vendor');
+Route::get('/transaction/{platformId?}', 'TransactionController@index')->name('transaction')->middleware('vendor');
+Route::any('/qrcodes/{platformId?}/{qrcodeId?}', 'QrcodeController@index')->name('qrcodes')->middleware('vendor');
+Route::get('/qrcodeDownload/{id?}', 'QrcodeController@qrcodeDownload')->name('qrcodeDownload')->middleware('vendor');
+Route::get('/indexqrcodes/{platformId?}', 'ReportController@indexqrcodes')->name('indexqrcodes')->middleware('vendor');
+
+//downloads
+Route::get('/transactions/pdf/{platformId?}/{qrCodeId?}','PdfController@export_pdf')->name('transactions-pdf')->middleware('vendor');
+Route::get('/transactions/xlsx/{platformId?}/{qrCodeId?}','ExcelController@exportxlsx')->name('transactionsxlsx')->middleware('vendor');
+Route::get('/transactions/csv/{platformId?}/{qrCodeId?}','ExcelController@exportcsv')->name('transactionscsv')->middleware('vendor');
+
+Route::post('/updatelogo', 'QrcodeController@updatelogo')->name('updatelogo')->middleware('vendor');
+
+//Amount Setting
+Route::post('/saveuseramount', 'AmountsettingController@save')->name('saveuseramount')->middleware('vendor');
+Route::post('/updateamount', ['as'=>'updateamount','uses'=>'AmountsettingController@updateamount'])->middleware('vendor');
+Route::post('/deleteamount', ['as'=>'deleteamount','uses'=>'AmountsettingController@deleteamount'])->middleware('vendor');
 
 
-Route::get('/dashboard', function () {
+Route::post('/getstatistics', 'DashboardController@getstatistics')->name('getstatistics')->middleware('vendor');
+Route::post('/transactiontotalqrcode', 'ReportController@transactiontotalqrcode')->name('transactiontotalqrcode')->middleware('vendor');
+Route::post('/getpiechartdata', 'ReportController@piechartData')->name('getpiechartdata')->middleware('vendor');
 
-    return view('backend.dashboard');
-});
-
-
-Route::get('/profile', function () {
-
-    return view('backend.profile');
-});
+Route::get('/createQrcode/{platformId?}', 'QrcodeController@createQrcode')->name('createQrcode')->middleware('vendor');
 
 
-Route::get('/qrcodes', function () {
+Route::post('/generateQrcode', 'QrcodeController@generateQrCode')->name('generateQrcode')->middleware('vendor');
+Route::post('/updateQrcode', 'QrcodeController@updateQrcode')->name('updateQrcode')->middleware('vendor');
+Route::post('/deleteQrcode', 'QrcodeController@deleteQrcode')->name('deleteQrcode')->middleware('vendor');
+Route::post('/activateQrcode', 'QrcodeController@activateQrcode')->name('activateQrcode')->middleware('vendor');
+Route::post('/qrcodesreports', ['as'=>'qrcodesreports','uses'=>'ReportController@reports'])->middleware('vendor');
+Route::post('/updateprofile', ['as'=>'updateprofile','uses'=>'ProfileController@updateprofile'])->middleware('vendor');
+Route::get('/registeraccount/{email?}', 'AccountController@handleAccountCreation')->name('registeraccount')->middleware('vendor');
+Route::post('/searchqrcode', 'QrcodeController@searchQrcode')->name('searchqrcode')->middleware('vendor');
 
-    return view('backend.qrcodes');
-});
+
+
+
+
+
+

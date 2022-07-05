@@ -55,6 +55,7 @@
                     <p class="tx-color-03 tx-16 mg-b-40">It's free to signup and only takes a minute.</p>
                     <form action="{{route('updatepassword')}}" method="post">
                         @csrf
+                        @include('partials.messages.alert')
                         <div class="form-group">
                             <label>Email address</label>
                             <input type="email" name="email" class="form-control" placeholder="Enter your email address">
@@ -111,26 +112,26 @@
 <!-- append theme customizer -->
 <script src="{{ url('/assets/js/js.cookie.js')}}"></script>
 <script src="{{ url('/assets/js/dashforge.settings.js')}}"></script>
-<script>
-    $(function () {
-        'use script'
+{{--<script>--}}
+{{--    $(function () {--}}
+{{--        'use script'--}}
 
-        window.darkMode = function () {
-            $('.btn-white').addClass('btn-dark').removeClass('btn-white');
-        }
+{{--        window.darkMode = function () {--}}
+{{--            $('.btn-white').addClass('btn-dark').removeClass('btn-white');--}}
+{{--        }--}}
 
-        window.lightMode = function () {
-            $('.btn-dark').addClass('btn-white').removeClass('btn-dark');
-        }
+{{--        window.lightMode = function () {--}}
+{{--            $('.btn-dark').addClass('btn-white').removeClass('btn-dark');--}}
+{{--        }--}}
 
-        var hasMode = Cookies.get('df-mode');
-        if (hasMode === 'dark') {
-            darkMode();
-        } else {
-            lightMode();
-        }
-    })
-</script>
+{{--        var hasMode = Cookies.get('df-mode');--}}
+{{--        if (hasMode === 'dark') {--}}
+{{--            darkMode();--}}
+{{--        } else {--}}
+{{--            lightMode();--}}
+{{--        }--}}
+{{--    })--}}
+{{--</script>--}}
 </body>
 </html>
 
