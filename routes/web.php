@@ -50,8 +50,8 @@ Route::middleware(['visitor'])->group(function () {
 
 
 
-    Route::get('/loginaccount', [LoginController::class, 'index'])->name('loginaccountx');
-    Route::post('/loginaccount', [LoginController::class, 'handleAccountLogin'])->name('loginaccount');
+    Route::get('/loginaccount', [LoginController::class, 'index'])->name('loginaccount');
+    Route::post('/loginaccount', [LoginController::class, 'handleAccountLogin']);
     Route::get('/accountveirfied', 'AccountController@accountveirfied')->name('accountveirfied');
     Route::get('/pay/{platformId?}/{qrcode_id?}', [PaymentController::class, 'createPayment'])->name('pay');
 
