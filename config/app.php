@@ -206,6 +206,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Yoeunes\Toastr\ToastrServiceProvider::class
     ],
 
     /*
@@ -265,6 +266,7 @@ return [
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Stripeuser'=> App\Helpers\Stripeuser::class,
         'Subscriptionolliepay'=> App\Helpers\Subscriptionolliepay::class,
+
 
     ],
 

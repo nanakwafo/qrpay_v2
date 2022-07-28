@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PrivacyController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 //use Analytics;
@@ -77,7 +78,7 @@ Route::middleware(['visitor'])->group(function () {
 
 
 Route::get('/dashboard/{platformId?}', [DashboardController::class, 'index'])->name('dashboard')->middleware('vendor');
-Route::get('/profile/{platformId?}', 'ProfileController@index')->name('profile')->middleware('vendor');
+Route::get('/profile/{platformId?}',[ProfileController::class, 'index'])->name('profile')->middleware('vendor');
 Route::get('/transaction/{platformId?}', 'TransactionController@index')->name('transaction')->middleware('vendor');
 Route::any('/qrcodes/{platformId?}/{qrcodeId?}', 'QrcodeController@index')->name('qrcodes')->middleware('vendor');
 Route::get('/qrcodeDownload/{id?}', 'QrcodeController@qrcodeDownload')->name('qrcodeDownload')->middleware('vendor');
@@ -108,7 +109,7 @@ Route::post('/updateQrcode', 'QrcodeController@updateQrcode')->name('updateQrcod
 Route::post('/deleteQrcode', 'QrcodeController@deleteQrcode')->name('deleteQrcode')->middleware('vendor');
 Route::post('/activateQrcode', 'QrcodeController@activateQrcode')->name('activateQrcode')->middleware('vendor');
 Route::post('/qrcodesreports', ['as'=>'qrcodesreports','uses'=>'ReportController@reports'])->middleware('vendor');
-Route::post('/updateprofile', ['as'=>'updateprofile','uses'=>'ProfileController@updateprofile'])->middleware('vendor');
+Route::post('/updateprofile',[ProfileController::class, 'updateprofile'] )->middleware('vendor');
 Route::get('/registeraccount/{email?}', 'AccountController@handleAccountCreation')->name('registeraccount')->middleware('vendor');
 Route::post('/searchqrcode', 'QrcodeController@searchQrcode')->name('searchqrcode')->middleware('vendor');
 

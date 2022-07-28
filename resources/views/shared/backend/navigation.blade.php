@@ -25,7 +25,7 @@
             </div>
             <div class="collapse" id="loggedinMenu">
                 <ul class="nav nav-aside mg-b-0">
-                    <li class="nav-item"><a href="" class="nav-link"><i data-feather="edit"></i> <span>Edit Profile</span></a></li>
+                    <li class="nav-item"><a href="/profile/{{$platformId}}" class="nav-link"><i data-feather="edit"></i> <span>Edit Profile</span></a></li>
                     <li class="nav-item"><a href="" class="nav-link"><i data-feather="user"></i> <span>View Profile</span></a></li>
                     <li class="nav-item"><a href="" class="nav-link"><i data-feather="settings"></i> <span>Account Settings</span></a></li>
                     <li class="nav-item"><a href="" class="nav-link"><i data-feather="help-circle"></i> <span>Help Center</span></a></li>
@@ -35,7 +35,7 @@
         </div><!-- aside-loggedin -->
         <ul class="nav nav-aside">
             <li class="nav-label">Dashboard</li>
-            <li class="nav-item active"><a href="dashboard-one.html" class="nav-link"><i data-feather="shopping-bag"></i> <span>Sales Monitoring</span></a></li>
+            <li class="nav-item active"><a href="/dashboard/{{$platformId}}" class="nav-link"><i data-feather="shopping-bag"></i> <span>Sales Monitoring</span></a></li>
             <!--  <li class="nav-item"><a href="dashboard-two.html" class="nav-link"><i data-feather="globe"></i> <span>Website Analytics</span></a></li>
              <li class="nav-item"><a href="dashboard-three.html" class="nav-link"><i data-feather="pie-chart"></i> <span>Cryptocurrency</span></a></li>
              <li class="nav-item"><a href="dashboard-four.html" class="nav-link"><i data-feather="life-buoy"></i> <span>Helpdesk Management</span></a></li> -->

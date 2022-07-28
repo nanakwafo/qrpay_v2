@@ -21,7 +21,7 @@ class DashboardController extends Controller
     {
         $accountId = Stripeuser::getaccountId($platformId);
         $recentTransaction = Transaction::where('accountId', $accountId)->orderBy('id', 'desc')->take(5)->get();
-        return view('userpanel.dashboard', [
+        return view('backend.dashboard', [
             'platformId' => $platformId,
             'recentTransaction' => $recentTransaction ,
             'details' => $this->profileDetails($platformId),

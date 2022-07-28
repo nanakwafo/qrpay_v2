@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Stripeuser;
-use App\Profile;
+use App\Models\Profile;
 use Sentinel;
 use Illuminate\Http\Request;
 use Image;
@@ -18,14 +18,14 @@ class ProfileController extends Controller
         if (empty($this->profileDetails($platformId))) {
 
             toastr()->warning('Please update your profile details');
-            return view('userpanel.profile',
+            return view('backend.profile',
                 [
                     'platformId' => $platformId,
                     'details' => $this->profileDetails($platformId),
                     'userOnboardStatus' => $this->userOnboardStatus($platformId)
                 ]);
         }
-        return view('userpanel.profile',
+        return view('backend.profile',
             [
                 'platformId' => $platformId,
                 'details' => $this->profileDetails($platformId),
