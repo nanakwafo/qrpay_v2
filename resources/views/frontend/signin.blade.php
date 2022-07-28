@@ -66,14 +66,14 @@
                         @csrf
                     <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="yourname@yourmail.com">
+                        <input type="email" name="email" class="form-control" placeholder="yourname@yourmail.com">
                     </div>
                     <div class="form-group">
                         <div class="d-flex justify-content-between mg-b-5">
                             <label class="mg-b-0-f">Password</label>
                             <a href="" class="tx-13">Forgot password?</a>
                         </div>
-                        <input type="password" class="form-control" placeholder="Enter your password">
+                        <input type="password" name="password" class="form-control" placeholder="Enter your password">
                     </div>
                     <button class="btn btn-brand-02 btn-block">Sign In</button>
                     </form>

@@ -18,11 +18,7 @@ class ActivationController extends Controller
             $credentials = [
                 'login' => $email,
             ];
-
-
             $user = Sentinel::findByCredentials($credentials);
-
-
             if (Activation::complete($user, $activationCode)) {
                 return redirect()->route('loginaccount');
             } else {
@@ -30,10 +26,7 @@ class ActivationController extends Controller
                 {
                     return redirect()->route('loginaccount');
                 }
-
             }
-
-
         } catch (\Exception $exception) {
             return $exception;
         }

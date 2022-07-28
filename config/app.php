@@ -263,6 +263,8 @@ return [
         'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
+        'Stripeuser'=> App\Helpers\Stripeuser::class,
+        'Subscriptionolliepay'=> App\Helpers\Subscriptionolliepay::class,
 
     ],
 

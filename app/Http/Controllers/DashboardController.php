@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\Stripeuser;
-use App\Transaction;
+
+use App\Models\Transaction;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Queue\RedisQueue;
 use Illuminate\Support\Facades\DB;
+use App\Helpers\Stripeuser;
 use stdClass;
 use function Aws\dir_iterator;
 

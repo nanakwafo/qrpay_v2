@@ -3,9 +3,12 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ActivationController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 //use Analytics;
@@ -33,7 +36,7 @@ Route::get('/test',function (){
 
 });
 Route::get('/', [WelcomeController::class, 'index']);
-Route::post('/logout', 'LoginController@logout')->name('logout');
+Route::post('/logout',[LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['visitor'])->group(function () {
 
@@ -41,10 +44,10 @@ Route::middleware(['visitor'])->group(function () {
     Route::get('/success/{amount}/{companyname}', [PaymentController::class, 'success'])->name('success');
 
 
-    Route::get('/privacy', 'PrivacyController@index')->name('privacy');
-    Route::get('/forgotpassword', 'ForgotPasswordController@index')->name('forgotpassword');
-    Route::get('/reset/{email}/{resetCode}', 'ForgotPasswordController@resetpassword')->name('reset');
-    Route::post('/reset/{email}/{resetCode}', 'ForgotPasswordController@postresetpassword')->name('reset');
+    Route::get('/privacy',[PrivacyController::class,'index'])->name('privacy');
+    Route::get('/forgotpassword', [ForgotPasswordController::class,'index'])->name('forgotpassword');
+    Route::get('/reset/{email}/{resetCode}', [ForgotPasswordController::class,'resetpassword'])->name('reset');
+    Route::post('/reset/{email}/{resetCode}', [ForgotPasswordController::class,'postresetpassword'])->name('reset');
 
     Route::get('/activate/{email}/{activationCode}', [ActivationController::class, 'activate'])->name('activate');
 
@@ -52,7 +55,7 @@ Route::middleware(['visitor'])->group(function () {
 
     Route::get('/loginaccount', [LoginController::class, 'index'])->name('loginaccount');
     Route::post('/loginaccount', [LoginController::class, 'handleAccountLogin']);
-    Route::get('/accountveirfied', 'AccountController@accountveirfied')->name('accountveirfied');
+    Route::get('/accountveirfied', [AccountController::class, 'accountveirfied'])->name('accountveirfied');
     Route::get('/pay/{platformId?}/{qrcode_id?}', [PaymentController::class, 'createPayment'])->name('pay');
 
 
@@ -73,7 +76,7 @@ Route::middleware(['visitor'])->group(function () {
 });
 
 
-Route::get('/dashboard/{platformId?}', 'DashboardController@index')->name('dashboard')->middleware('vendor');
+Route::get('/dashboard/{platformId?}', [DashboardController::class, 'index'])->name('dashboard')->middleware('vendor');
 Route::get('/profile/{platformId?}', 'ProfileController@index')->name('profile')->middleware('vendor');
 Route::get('/transaction/{platformId?}', 'TransactionController@index')->name('transaction')->middleware('vendor');
 Route::any('/qrcodes/{platformId?}/{qrcodeId?}', 'QrcodeController@index')->name('qrcodes')->middleware('vendor');
@@ -93,7 +96,7 @@ Route::post('/updateamount', ['as'=>'updateamount','uses'=>'AmountsettingControl
 Route::post('/deleteamount', ['as'=>'deleteamount','uses'=>'AmountsettingController@deleteamount'])->middleware('vendor');
 
 
-Route::post('/getstatistics', 'DashboardController@getstatistics')->name('getstatistics')->middleware('vendor');
+Route::post('/getstatistics', [DashboardController::class, 'getstatistics'])->name('getstatistics')->middleware('vendor');
 Route::post('/transactiontotalqrcode', 'ReportController@transactiontotalqrcode')->name('transactiontotalqrcode')->middleware('vendor');
 Route::post('/getpiechartdata', 'ReportController@piechartData')->name('getpiechartdata')->middleware('vendor');
 

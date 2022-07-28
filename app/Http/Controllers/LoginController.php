@@ -43,8 +43,8 @@ class LoginController extends Controller
             if(Sentinel::authenticate($credentials)){
                 if(Sentinel::getUser()->roles()->first()->slug =='vendor') {
                     $platformId = Account::where('email', $validated['email'])->pluck('platformId')->first();
-                    dd($platformId);
-                    //return redirect('dashboard/' . $platformId);
+
+                    return redirect('dashboard/' . $platformId);
                 }
             }else
             {
