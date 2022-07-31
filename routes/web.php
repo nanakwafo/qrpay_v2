@@ -109,7 +109,7 @@ Route::post('/updateQrcode', 'QrcodeController@updateQrcode')->name('updateQrcod
 Route::post('/deleteQrcode', 'QrcodeController@deleteQrcode')->name('deleteQrcode')->middleware('vendor');
 Route::post('/activateQrcode', 'QrcodeController@activateQrcode')->name('activateQrcode')->middleware('vendor');
 Route::post('/qrcodesreports', ['as'=>'qrcodesreports','uses'=>'ReportController@reports'])->middleware('vendor');
-Route::post('/updateprofile',[ProfileController::class, 'updateprofile'] )->middleware('vendor');
+Route::post('/updateprofile',[ProfileController::class, 'updateprofile'] )->name('updateprofile')->middleware('vendor');
 Route::get('/registeraccount/{email?}', 'AccountController@handleAccountCreation')->name('registeraccount')->middleware('vendor');
 Route::post('/searchqrcode', 'QrcodeController@searchQrcode')->name('searchqrcode')->middleware('vendor');
 
