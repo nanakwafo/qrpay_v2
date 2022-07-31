@@ -10,6 +10,7 @@ use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QrcodeController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 //use Analytics;
@@ -80,8 +81,8 @@ Route::middleware(['visitor'])->group(function () {
 Route::get('/dashboard/{platformId?}', [DashboardController::class, 'index'])->name('dashboard')->middleware('vendor');
 Route::get('/profile/{platformId?}',[ProfileController::class, 'index'])->name('profile')->middleware('vendor');
 Route::get('/transaction/{platformId?}', 'TransactionController@index')->name('transaction')->middleware('vendor');
-Route::any('/qrcodes/{platformId?}/{qrcodeId?}', 'QrcodeController@index')->name('qrcodes')->middleware('vendor');
-Route::get('/qrcodeDownload/{id?}', 'QrcodeController@qrcodeDownload')->name('qrcodeDownload')->middleware('vendor');
+Route::any('/qrcodes/{platformId?}/{qrcodeId?}',[QrcodeController::class, 'index'] )->name('qrcodes')->middleware('vendor');
+Route::get('/qrcodeDownload/{id?}', [QrcodeController::class, 'qrcodeDownload'])->name('qrcodeDownload')->middleware('vendor');
 Route::get('/indexqrcodes/{platformId?}', 'ReportController@indexqrcodes')->name('indexqrcodes')->middleware('vendor');
 
 //downloads
@@ -89,7 +90,7 @@ Route::get('/transactions/pdf/{platformId?}/{qrCodeId?}','PdfController@export_p
 Route::get('/transactions/xlsx/{platformId?}/{qrCodeId?}','ExcelController@exportxlsx')->name('transactionsxlsx')->middleware('vendor');
 Route::get('/transactions/csv/{platformId?}/{qrCodeId?}','ExcelController@exportcsv')->name('transactionscsv')->middleware('vendor');
 
-Route::post('/updatelogo', 'QrcodeController@updatelogo')->name('updatelogo')->middleware('vendor');
+Route::post('/updatelogo', [QrcodeController::class, 'updatelogo'])->name('updatelogo')->middleware('vendor');
 
 //Amount Setting
 Route::post('/saveuseramount', 'AmountsettingController@save')->name('saveuseramount')->middleware('vendor');
@@ -101,17 +102,17 @@ Route::post('/getstatistics', [DashboardController::class, 'getstatistics'])->na
 Route::post('/transactiontotalqrcode', 'ReportController@transactiontotalqrcode')->name('transactiontotalqrcode')->middleware('vendor');
 Route::post('/getpiechartdata', 'ReportController@piechartData')->name('getpiechartdata')->middleware('vendor');
 
-Route::get('/createQrcode/{platformId?}', 'QrcodeController@createQrcode')->name('createQrcode')->middleware('vendor');
+Route::get('/createQrcode/{platformId?}',[QrcodeController::class, 'createQrcode'])->name('createQrcode')->middleware('vendor');
 
 
-Route::post('/generateQrcode', 'QrcodeController@generateQrCode')->name('generateQrcode')->middleware('vendor');
-Route::post('/updateQrcode', 'QrcodeController@updateQrcode')->name('updateQrcode')->middleware('vendor');
-Route::post('/deleteQrcode', 'QrcodeController@deleteQrcode')->name('deleteQrcode')->middleware('vendor');
-Route::post('/activateQrcode', 'QrcodeController@activateQrcode')->name('activateQrcode')->middleware('vendor');
+Route::post('/generateQrcode', [QrcodeController::class, 'generateQrCode'])->name('generateQrcode')->middleware('vendor');
+Route::post('/updateQrcode', [QrcodeController::class, 'updateQrcode'])->name('updateQrcode')->middleware('vendor');
+Route::post('/deleteQrcode', [QrcodeController::class, 'deleteQrcode'])->name('deleteQrcode')->middleware('vendor');
+Route::post('/activateQrcode',[QrcodeController::class, 'activateQrcode'])->name('activateQrcode')->middleware('vendor');
 Route::post('/qrcodesreports', ['as'=>'qrcodesreports','uses'=>'ReportController@reports'])->middleware('vendor');
 Route::post('/updateprofile',[ProfileController::class, 'updateprofile'] )->name('updateprofile')->middleware('vendor');
 Route::get('/registeraccount/{email?}', 'AccountController@handleAccountCreation')->name('registeraccount')->middleware('vendor');
-Route::post('/searchqrcode', 'QrcodeController@searchQrcode')->name('searchqrcode')->middleware('vendor');
+Route::post('/searchqrcode',[QrcodeController::class, 'searchQrcode'])->name('searchqrcode')->middleware('vendor');
 
 
 

@@ -40,7 +40,9 @@
              <li class="nav-item"><a href="dashboard-three.html" class="nav-link"><i data-feather="pie-chart"></i> <span>Cryptocurrency</span></a></li>
              <li class="nav-item"><a href="dashboard-four.html" class="nav-link"><i data-feather="life-buoy"></i> <span>Helpdesk Management</span></a></li> -->
             <li class="nav-label mg-t-25">QrCodes</li>
-            <li class="nav-item"><a href="app-calendar.html" class="nav-link"><i data-feather="calendar"></i> <span>Manage</span></a></li>
+            <li class="nav-item"><a href="/createQrcode/{{$platformId}}" class="nav-link"><i data-feather="calendar"></i> <span>Create QrCode</span></a></li>
+            <li class="nav-item"><a href="/setQrcodeAmount/{{$platformId}}" class="nav-link"><i data-feather="calendar"></i> <span>Set QrCodes Amount</span></a></li>
+            <li class="nav-item"><a href="/qrcodes/{{$platformId}}" class="nav-link"><i data-feather="calendar"></i> <span>All Qrcodes</span></a></li>
             <!--  <li class="nav-item"><a href="app-chat.html" class="nav-link"><i data-feather="message-square"></i> <span>Chat</span></a></li>
              <li class="nav-item"><a href="app-contacts.html" class="nav-link"><i data-feather="users"></i> <span>Contacts</span></a></li>
              <li class="nav-item"><a href="app-file-manager.html" class="nav-link"><i data-feather="file-text"></i> <span>File Manager</span></a></li>

@@ -33,7 +33,7 @@ class QrcodeController extends Controller
                 switch (trim($request->sort)) {
 
                     case 'active':
-                        return view('userpanel.qrcodes', [
+                        return view('backend.qrcodes', [
                             'platformId' => $platformId,
                             'qrcodes' => Qrcode::where('platformId', $platformId)->where('status', 'valid')->paginate(6),
                             'details' => $this->profileDetails($platformId),
@@ -43,7 +43,7 @@ class QrcodeController extends Controller
                         break;
 
                     case 'inactive':
-                        return view('userpanel.qrcodes', [
+                        return view('backend.qrcodes', [
                             'platformId' => $platformId,
                             'qrcodes' => Qrcode::where('platformId', $platformId)->where('status', 'invalid')->paginate(6),
                             'details' => $this->profileDetails($platformId),
@@ -53,7 +53,7 @@ class QrcodeController extends Controller
                         break;
 
                     case 'all':
-                        return view('userpanel.qrcodes', [
+                        return view('backend.qrcodes', [
                             'platformId' => $platformId,
                             'qrcodes' => Qrcode::where('platformId', $platformId)->paginate(6),
                             'details' => $this->profileDetails($platformId),
@@ -70,14 +70,14 @@ class QrcodeController extends Controller
 
 
         if (empty($qrcodeId)) {
-            return view('userpanel.qrcodes', [
+            return view('backend.qrcodes', [
                 'platformId' => $platformId,
                 'qrcodes' => Qrcode::where('platformId', $platformId)->paginate(6),
                 'details' => $this->profileDetails($platformId),
                 'userOnboardStatus' => $this->userOnboardStatus($platformId)
             ]);
         } else {
-            return view('userpanel.qrcodemanage', [
+            return view('backend.qrcodemanage', [
                 'platformId' => $platformId,
                 'qrcodes' => Qrcode::where('platformId', $platformId)->where('id', $qrcodeId)->first(),
                 'qrcodeAmounts' => Amountsetting::where('platformId', $platformId)->where('qrcode_id', $qrcodeId)->get(),
@@ -92,7 +92,7 @@ class QrcodeController extends Controller
 
     public function createQrcode($platformId = '')
     {
-        return view('userpanel.createQrcode', [
+        return view('backend.createQrcode', [
             'platformId' => $platformId,
             'details' => $this->profileDetails($platformId),
             'userOnboardStatus' => $this->userOnboardStatus($platformId)
@@ -115,7 +115,7 @@ class QrcodeController extends Controller
             $resources = Qrcode::where('platformId', $platformId)->paginate(6);
             $data = $resources;
         }
-        return view('userpanel.qrcodes', [
+        return view('backend.qrcodes', [
             'platformId' => $platformId,
             'qrcodes' => $data,
             'details' => $this->profileDetails($platformId),
