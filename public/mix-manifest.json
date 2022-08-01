@@ -15,6 +15,7 @@
     "/assets/js/bootstrap.bundle.min.js": "/assets/js/bootstrap.bundle.min.js",
     "/assets/js/feather.min.js": "/assets/js/feather.min.js",
     "/assets/js/perfect-scrollbar.min.js": "/assets/js/perfect-scrollbar.min.js",
+    "/custom/js/app.js": "/custom/js/app.js",
     "/assets/css/dashforge.css": "/assets/css/dashforge.css",
     "/assets/css/dashforge.profile.css": "/assets/css/dashforge.profile.css",
     "/assets/lib/jqvmap/jqvmap.min.css": "/assets/lib/jqvmap/jqvmap.min.css",

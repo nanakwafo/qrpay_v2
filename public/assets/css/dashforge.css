@@ -2258,9 +2258,6 @@ pre {
   .form-control::-moz-placeholder {
     color: #7987a1;
     opacity: 1; }
-  .form-control:-ms-input-placeholder {
-    color: #7987a1;
-    opacity: 1; }
   .form-control::placeholder {
     color: #7987a1;
     opacity: 1; }
@@ -2621,7 +2618,6 @@ textarea.form-control {
   vertical-align: middle;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
@@ -8490,8 +8486,6 @@ strong {
   font-size: inherit; }
   .form-control::-moz-placeholder {
     color: #c0ccda; }
-  .form-control:-ms-input-placeholder {
-    color: #c0ccda; }
   .form-control::placeholder {
     color: #c0ccda; }
   .form-control:disabled, .form-control[readonly] {
@@ -11445,8 +11439,6 @@ table.dataTable {
         width: auto; } }
     .dataTables_wrapper .dataTables_filter input::-moz-placeholder {
       color: #97a3b9; }
-    .dataTables_wrapper .dataTables_filter input:-ms-input-placeholder {
-      color: #97a3b9; }
     .dataTables_wrapper .dataTables_filter input::placeholder {
       color: #97a3b9; }
 
@@ -12462,8 +12454,6 @@ textarea.parsley-success:focus {
   padding: 5px 10px; }
   .select2-container--default .select2-search--dropdown .select2-search__field::-moz-placeholder {
     color: #8392a5; }
-  .select2-container--default .select2-search--dropdown .select2-search__field:-ms-input-placeholder {
-    color: #8392a5; }
   .select2-container--default .select2-search--dropdown .select2-search__field::placeholder {
     color: #8392a5; }
 
@@ -12482,10 +12472,6 @@ textarea.parsley-success:focus {
   padding-left: 10px;
   opacity: 1; }
   .select2-container--default .select2-search--inline .select2-search__field::-moz-placeholder {
-    color: #8392a5;
-    font-weight: 400;
-    opacity: 1; }
-  .select2-container--default .select2-search--inline .select2-search__field:-ms-input-placeholder {
     color: #8392a5;
     font-weight: 400;
     opacity: 1; }
@@ -13210,8 +13196,6 @@ textarea.parsley-success:focus {
       .navbar-search-header .form-control {
         font-size: 16px; } }
     .navbar-search-header .form-control::-moz-placeholder {
-      font-weight: 400; }
-    .navbar-search-header .form-control:-ms-input-placeholder {
       font-weight: 400; }
     .navbar-search-header .form-control::placeholder {
       font-weight: 400; }
